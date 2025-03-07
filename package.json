@@ -4,7 +4,8 @@
   "description": "A basic app setup to demonstrate Travis CI deployment",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "express": "^4.17.1"
