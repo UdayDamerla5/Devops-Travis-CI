@@ -12,10 +12,8 @@ before_install:
 - java -version
 install:
 - npm install
-- npm install -g sonar-scanner
 script:
 - npm test
-- sonar-scanner
 addons:
   sonarcloud:
     organization: udaydamerla5
