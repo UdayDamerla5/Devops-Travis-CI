@@ -18,7 +18,7 @@ script:
 - sonar-scanner
 addons:
   sonarcloud:
-    organization: Uday Damerla
+    organization: udaydamerla5
     token:
       secure: PkhRMHHhFuLmcqZNyN41mCjvOZPxis7H/ReC2c9DarF1UV/stA8ao6BRi2rq50z0/lKWO/0MHUCMBIwp+PGb5xmGMb72COvEWv7lNl6i6xxq8BNOquNxJrBN3mSmBp5jDG8Wpw8YtNhkqWX1SWxpwkiXKXlYVendPMoQEhemrGkpq9HCCeBzLGbq7N6HP2DfUfDwHs0hPfnHJ5PERpXwXDP3G9vVkd66j4KI4Mw52MxdlfrcQhvFMjOtEvArsyfLvTFvRdYb806Spm7XBYEXiO1zlFQ9KE56MvV8GGqyiZRcmjZfGAEkTqNc/nH+f37v6k/TY/YB1z4xDpWY66he/roGa837xFRjDK1rVMqsBMi2ifeQYZ0wB2VYn1J56+6eI+DO+9ODorS+pUuQEtkyrmvjrZUWzKXARjvea6TjZKevFfZUkG/2ta87NbNkhawaJYh1Q9zvIs54GGKLGiN1YKcFSxFg9A496RoyyMW9ntK0rKrhIfPRRu311b3gy3y/u8w0/ToBRXGXCxje4/Oj9AwexKFocQlZlhlrmmgVNItjRlkMRtOtPjqRA/hd9TCFCgFoudRLpRssb46AzMj1Xn00UAZ/wxb7juaVmFsJPuGrHMZfyxHnAtNuTJJu9Ev/TntYM+Vwto6XF9ReXpx0QR0OxUbnh1f+pFlu9pdI3wQ=
 deploy:
