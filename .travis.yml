@@ -1,14 +1,15 @@
 language: node_js
 node_js:
-  - "12"
+- '12'
 install:
-  - npm install
+- npm install
 script:
-  - npm test
+- npm test
 deploy:
   provider: heroku
+  edge: true
   api_key:
-    secure: HRKU-74bf898c-978d-4ba2-be6b-c0b3ee3c6edc
+    secure: SIVw2b26FzwN+G/rQIfHOtIF8I4BkCMfowDVoVRaS2XwEhcj+XeGe7E20bd1e7G8B4P0QNvL/1954GWzMdjl0ryrtBiGeW9QsppaKjyt1DN/MdkTNS+E5/JR+SpmWArTG0D/DxF7HLtxuNBighEObiXV3TVv+6a6fGw+8RuXkmtKoEFrdqAT9dOwDtYs0bHrWlDdJ7OFrTPRaieBAzw8hDvkE9BUGqVgsNUNn12YSCnrxxwCfmUbq+Nyjd/zqAMiPQaYvVHgJIdebxtLk/51zroZwbAYkPfKv30FJGcI3IlPjshCRKs8fLJCkJllaSjLyN1IQ6uMZ624ftCAd/jQgb+0ZNxdMr9q9/+2RG2dwQdEUsbxcz85brUNwR3ywfAD2BGwpSUpWga97d3ahb8oyuGLOSoJrKwuKBQ9cYAe1xU/bO0tIH+fZcv06SVhI8W1dskuw8bXwsJga8KgDxj3MlxjhG/JM8BhSoWrJWV8zCkBKtEf4hxPEU1s2ylOMroNGl86IJHdjuM5v9qDSRCIO2HB3A/yNV4n4uqkq6oKMuclfzFX9Re8O1YhdhxirQMpI147wpMonWVP4dtLta8R42Iw+7kdKHTF9R145W7DrzEnN4xyhO4+MMDnundhSu/uWYrUIhQgAk/uWDUyayHwqq0QVvzC7gWMtPJvcyOpl7c=
   app: Devops-Travis-CI
   on:
     branch: main
