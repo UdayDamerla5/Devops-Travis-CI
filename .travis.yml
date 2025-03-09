@@ -1,27 +1,21 @@
 language: node_js
 node_js:
-  - '12'
+- '12'
 install:
-  - npm install
+- npm install
 script:
-  - npm test
-  - sonar-scanner
+- npm test
+- sonar-scanner
 addons:
   sonarcloud:
-    organization: "Uday Damerla"
+    organization: Uday Damerla
     token:
-      secure: "PkhRMHHhFuLmcqZNyN41mCjvOZPxis7H/ReC2c9DarF1UV/stA8ao6BRi2rq50z0/lKWO/0MHUCMBIwp+PGb5xmGMb72COvEWv7lNl6i6xxq8BNOquNxJrBN3mSmBp5jDG8Wpw8YtNhkqWX1SWxpwkiXKXlYVendPMoQEhemrGkpq9HCCeBzLGbq7N6HP2DfUfDwHs0hPfnHJ5PERpXwXDP3G9vVkd66j4KI4Mw52MxdlfrcQhvFMjOtEvArsyfLvTFvRdYb806Spm7XBYEXiO1zlFQ9KE56MvV8GGqyiZRcmjZfGAEkTqNc/nH+f37v6k/TY/YB1z4xDpWY66he/roGa837xFRjDK1rVMqsBMi2ifeQYZ0wB2VYn1J56+6eI+DO+9ODorS+pUuQEtkyrmvjrZUWzKXARjvea6TjZKevFfZUkG/2ta87NbNkhawaJYh1Q9zvIs54GGKLGiN1YKcFSxFg9A496RoyyMW9ntK0rKrhIfPRRu311b3gy3y/u8w0/ToBRXGXCxje4/Oj9AwexKFocQlZlhlrmmgVNItjRlkMRtOtPjqRA/hd9TCFCgFoudRLpRssb46AzMj1Xn00UAZ/wxb7juaVmFsJPuGrHMZfyxHnAtNuTJJu9Ev/TntYM+Vwto6XF9ReXpx0QR0OxUbnh1f+pFlu9pdI3wQ="
-  apt:
-    packages:
-      - openjdk-17-jdk
-env:
-  global:
-    - JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+      secure: PkhRMHHhFuLmcqZNyN41mCjvOZPxis7H/ReC2c9DarF1UV/stA8ao6BRi2rq50z0/lKWO/0MHUCMBIwp+PGb5xmGMb72COvEWv7lNl6i6xxq8BNOquNxJrBN3mSmBp5jDG8Wpw8YtNhkqWX1SWxpwkiXKXlYVendPMoQEhemrGkpq9HCCeBzLGbq7N6HP2DfUfDwHs0hPfnHJ5PERpXwXDP3G9vVkd66j4KI4Mw52MxdlfrcQhvFMjOtEvArsyfLvTFvRdYb806Spm7XBYEXiO1zlFQ9KE56MvV8GGqyiZRcmjZfGAEkTqNc/nH+f37v6k/TY/YB1z4xDpWY66he/roGa837xFRjDK1rVMqsBMi2ifeQYZ0wB2VYn1J56+6eI+DO+9ODorS+pUuQEtkyrmvjrZUWzKXARjvea6TjZKevFfZUkG/2ta87NbNkhawaJYh1Q9zvIs54GGKLGiN1YKcFSxFg9A496RoyyMW9ntK0rKrhIfPRRu311b3gy3y/u8w0/ToBRXGXCxje4/Oj9AwexKFocQlZlhlrmmgVNItjRlkMRtOtPjqRA/hd9TCFCgFoudRLpRssb46AzMj1Xn00UAZ/wxb7juaVmFsJPuGrHMZfyxHnAtNuTJJu9Ev/TntYM+Vwto6XF9ReXpx0QR0OxUbnh1f+pFlu9pdI3wQ=
 deploy:
   provider: heroku
   edge: true
   api_key:
-    secure: "pqwMrw7h0lC8497hzRHON8Wj7v1aBqQQSt0ngbOWeOrvz3O0dXUEZsGBkGT8IxDTUIRPHmg24DwVASObBFyTHfl9ZSczb7fnGSQshHodimzPZSiOlEl2sSgF9OCPodMhC6WK2jR4j1Z2v6t9IVQBL6YUNMpVYc3BgHieGcKXd0Wk+Yvi0RcRxlRVJjtQ22JMcR8h/Dlc8pABCr/hG1vsDv96Sn7aec8Q7ZFl9ZQcK9Ge+XqpuwURT2Q3PD5f7N1pP18pM9D4Hkm7q2Jr46xjwOEsOw+YxkIxTZdbgrSwIDX/Yfkaud9AI1O3A0xIM/17640RQAwiU2ow/jl1zm1Q0gfCxxhlAkI8PfWDDaTYMN/TtTr1sbKRTdl+brxfvl2Fy2xTpMJUBEuD3wqTxpLugHL+kzT1SqEyrTrdciP79ROizomehiu2tNF3AT94K9QGfB/r2OgVnyfGDSDK1JiHu22mX4e5KujnhzjWpib1J90Bas3MKFuzR3PqZclyo91AtXmyzQbCCJyYEA4leeRTQZn0P78F/dlRJr+yHzoJeRcl8Is7YMluaxdHJDU7vyKpF/JR/Oz5GLRquXVvvWatJIa0+/hfo3z58hzOFn0uDFaDkz+cz+kDMS5x/SawUFdhzOajXnDeWY0s7MnAf/488/Nh3kO1pJ36cLKcpNPgOR8="
+    secure: pqwMrw7h0lC8497hzRHON8Wj7v1aBqQQSt0ngbOWeOrvz3O0dXUEZsGBkGT8IxDTUIRPHmg24DwVASObBFyTHfl9ZSczb7fnGSQshHodimzPZSiOlEl2sSgF9OCPodMhC6WK2jR4j1Z2v6t9IVQBL6YUNMpVYc3BgHieGcKXd0Wk+Yvi0RcRxlRVJjtQ22JMcR8h/Dlc8pABCr/hG1vsDv96Sn7aec8Q7ZFl9ZQcK9Ge+XqpuwURT2Q3PD5f7N1pP18pM9D4Hkm7q2Jr46xjwOEsOw+YxkIxTZdbgrSwIDX/Yfkaud9AI1O3A0xIM/17640RQAwiU2ow/jl1zm1Q0gfCxxhlAkI8PfWDDaTYMN/TtTr1sbKRTdl+brxfvl2Fy2xTpMJUBEuD3wqTxpLugHL+kzT1SqEyrTrdciP79ROizomehiu2tNF3AT94K9QGfB/r2OgVnyfGDSDK1JiHu22mX4e5KujnhzjWpib1J90Bas3MKFuzR3PqZclyo91AtXmyzQbCCJyYEA4leeRTQZn0P78F/dlRJr+yHzoJeRcl8Is7YMluaxdHJDU7vyKpF/JR/Oz5GLRquXVvvWatJIa0+/hfo3z58hzOFn0uDFaDkz+cz+kDMS5x/SawUFdhzOajXnDeWY0s7MnAf/488/Nh3kO1pJ36cLKcpNPgOR8=
   app: devops-travis-ci
   on:
     branch: main
