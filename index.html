@@ -3,31 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CI/CD with Travis CI, Heroku, and GitHub</title>
+    <title>Uday Damerla - Devops Demo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             background-color: #f4f4f4;
             color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .container {
-            max-width: 800px;
+            width: 100%;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
         }
         .step {
             margin-bottom: 20px;
             position: relative;
             padding-left: 40px;
+            cursor: pointer;
         }
         .step h3 {
             margin-bottom: 10px;
         }
         .step p {
             margin-bottom: 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+        }
+        .step.active p {
+            max-height: 1000px;
+            opacity: 1;
         }
         .step::before {
             content: '';
@@ -85,31 +102,65 @@
             transform: translate(-50%, -50%);
             animation: pulse 2s infinite;
         }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .step {
+                padding-left: 20px;
+            }
+            .step::before {
+                width: 20px;
+                height: 20px;
+            }
+            .pipeline {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .pipeline div {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .pipeline div::before {
+                width: 4px;
+                height: 100px;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .pipeline div::after {
+                width: 20px;
+                height: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>CI/CD with Travis CI, Heroku, and GitHub</h1>
+        <h1 style="text-align: center;">CI/CD with Travis CI, Heroku, and GitHub</h1>
         <p>Continuous Integration and Continuous Deployment (CI/CD) is a method to frequently deliver apps to customers by introducing automation into the stages of app development. The main concepts attributed to CI/CD are continuous integration, continuous deployment, and continuous delivery.</p>
         
         <h2>Process Overview</h2>
         <p>The CI/CD process involves the following steps:</p>
         
-        <div class="step">
+        <div class="step" onclick="toggleDetails(this)">
             <h3>1. Code Commit</h3>
             <p>Developers commit code changes to a GitHub repository. This is the first step in the CI/CD pipeline, where the latest code changes are pushed to the version control system.</p>
+            <p>Details about the code commit process and its importance in the CI/CD pipeline.</p>
         </div>
         
-        <div class="step">
+        <div class="step" onclick="toggleDetails(this)">
             <h3>2. Build and Test</h3>
             <p>Travis CI automatically triggers a build and runs tests on the new code changes. This ensures that the code is functional and meets the project's quality standards before it is deployed.</p>
+            <p>Details about the build and test process, including the tools and frameworks used.</p>
         </div>
         
-        <div class="step">
+        <div class="step" onclick="toggleDetails(this)">
             <h3>3. Deployment</h3>
             <p>If the tests pass, Travis CI deploys the application to Heroku. This step involves packaging the application and deploying it to a production environment where it can be accessed by users.</p>
+            <p>Details about the deployment process, including the steps to deploy to Heroku.</p>
         </div>
-        
+
         <h2>Visualizing the CI/CD Pipeline</h2>
         <div class="pipeline">
             <div>
@@ -123,6 +174,57 @@
             </div>
         </div>
         <p>The CI/CD pipeline is a series of steps that must be performed in order to deliver a new version of software. It includes stages such as source control, build, test, and deployment. Each stage is designed to ensure that the code is ready for production and meets the project's quality standards.</p>
+
+        <h2>How I Set Up This App's CI/CD</h2>
+        <div class="step" onclick="toggleDetails(this)">
+            <h3>1. Adding `.travis.yml`</h3>
+            <p>The first step was to add a `.travis.yml` file to the project. This file contains the configuration for Travis CI, specifying the language, node version, and the steps to install dependencies, run tests, and deploy the application.</p>
+            <p>Details about the `.travis.yml` configuration and its role in the CI/CD pipeline.</p>
+        </div>
+        
+        <div class="step" onclick="toggleDetails(this)">
+            <h3>2. Configuring Travis CI Credentials</h3>
+            <p>Next, I configured Travis CI credentials by encrypting sensitive information such as the SonarCloud token and Heroku API key using the `travis encrypt` command. These encrypted values were added to the `.travis.yml` file.</p>
+            <p>Details about encrypting credentials and securely managing them in Travis CI.</p>
+        </div>
+        
+        <div class="step" onclick="toggleDetails(this)">
+            <h3>3. Linking GitHub Repository to Travis CI</h3>
+            <p>I linked the GitHub repository to Travis CI to enable automatic builds and tests whenever code changes are pushed to the repository.</p>
+            <p>Details about linking the GitHub repository to Travis CI and setting up automatic builds.</p>
+        </div>
+        
+        <div class="step" onclick="toggleDetails(this)">
+            <h3>4. Creating a Project App in Heroku</h3>
+            <p>I created a new project app in Heroku to host the application. This involved setting up the Heroku environment and configuring the necessary buildpacks and environment variables.</p>
+            <p>Details about creating and configuring a project app in Heroku.</p>
+        </div>
+        
+        <div class="step" onclick="toggleDetails(this)">
+            <h3>5. Binding the App Code to Heroku Using Heroku API</h3>
+            <p>The application code was bound to Heroku using the Heroku API. This step involved deploying the application to Heroku using the Heroku API key, which was encrypted and stored in the `.travis.yml` file.</p>
+            <p>Details about binding the app code to Heroku and deploying using the Heroku API.</p>
+        </div>
+        
+        <div class="step" onclick="toggleDetails(this)">
+            <h3>6. Configuring SonarQube</h3>
+            <p>SonarQube was configured to analyze the code quality and provide feedback on code smells, bugs, and security vulnerabilities. The SonarCloud token was encrypted and added to the `.travis.yml` file.</p>
+            <p>Details about configuring SonarQube and integrating it into the CI/CD pipeline.</p>
+        </div>
+        
+        <h2>Challenges Faced</h2>
+        <p>During the setup process, I encountered several challenges:</p>
+        <ul>
+            <li><strong>Incompatible Java Versions:</strong> Ensuring that the correct version of Java was installed and used by Travis CI was crucial for the SonarQube analysis to run successfully. Different versions of Java can cause compatibility issues, so it was important to specify the correct version in the `.travis.yml` file and ensure it was installed correctly. For example, I had to install OpenJDK 17 and set the `JAVA_HOME` environment variable appropriately.</li>
+            <li><strong>Encrypting Sensitive Information:</strong> Encrypting the SonarCloud token and Heroku API key using the `travis encrypt` command and ensuring they were correctly referenced in the `.travis.yml` file was a critical step. This ensures that sensitive information is not exposed in the source code and is securely managed by Travis CI. The command `travis encrypt SONAR_TOKEN=your_token --add env.global` was used to encrypt the token.</li>
+            <li><strong>Configuring Environment Variables:</strong> Properly configuring environment variables in both Travis CI and Heroku was essential to ensure smooth deployment and operation of the application. This involved setting up the `.env` file for local development and ensuring that the necessary environment variables were available in the Travis CI build environment and the Heroku deployment environment. For example, the `SONAR_TOKEN` was added to the `.env` file and referenced in the Travis CI configuration.</li>
+        </ul>
     </div>
+
+    <script>
+        function toggleDetails(step) {
+            step.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
