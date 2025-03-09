@@ -10,6 +10,6 @@ deploy:
   edge: true
   api_key:
     secure: pqwMrw7h0lC8497hzRHON8Wj7v1aBqQQSt0ngbOWeOrvz3O0dXUEZsGBkGT8IxDTUIRPHmg24DwVASObBFyTHfl9ZSczb7fnGSQshHodimzPZSiOlEl2sSgF9OCPodMhC6WK2jR4j1Z2v6t9IVQBL6YUNMpVYc3BgHieGcKXd0Wk+Yvi0RcRxlRVJjtQ22JMcR8h/Dlc8pABCr/hG1vsDv96Sn7aec8Q7ZFl9ZQcK9Ge+XqpuwURT2Q3PD5f7N1pP18pM9D4Hkm7q2Jr46xjwOEsOw+YxkIxTZdbgrSwIDX/Yfkaud9AI1O3A0xIM/17640RQAwiU2ow/jl1zm1Q0gfCxxhlAkI8PfWDDaTYMN/TtTr1sbKRTdl+brxfvl2Fy2xTpMJUBEuD3wqTxpLugHL+kzT1SqEyrTrdciP79ROizomehiu2tNF3AT94K9QGfB/r2OgVnyfGDSDK1JiHu22mX4e5KujnhzjWpib1J90Bas3MKFuzR3PqZclyo91AtXmyzQbCCJyYEA4leeRTQZn0P78F/dlRJr+yHzoJeRcl8Is7YMluaxdHJDU7vyKpF/JR/Oz5GLRquXVvvWatJIa0+/hfo3z58hzOFn0uDFaDkz+cz+kDMS5x/SawUFdhzOajXnDeWY0s7MnAf/488/Nh3kO1pJ36cLKcpNPgOR8=
-  app: Devops-Travis-CI
+  app: devops-travis-ci
   on:
     branch: main
