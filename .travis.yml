@@ -9,3 +9,6 @@ deploy:
   provider: heroku
   api_key:
     secure: HRKU-09283820-bb8d-43f2-abd8-0102faada081
+  app: Devops-Travis-CI
+  on:
+    branch: main
